@@ -1,6 +1,19 @@
 function App() {
   return (
     <div className="wrapper clear">
+      <div className="overlay">
+        <div className="drawer">
+          <h2 className="mb-10">Кошик</h2>
+          <div className="cardItem d-flex align-center">
+            <img className="mr-20" width={70} height={70} src="/products/la-roshe.jpg" alt="product"/>
+              <div className="mr-20">
+                <p className="mb-5">La roche posay Effaclar Gel Exfoliante Puro 400ml</p>
+                <b>666 грн</b>
+              </div>
+            <img src="/img/btn-remove.svg" alt="remove"/>
+          </div>
+        </div>
+      </div>
       <header className="align-center">
         <div className = "header-left">
         <img className="header-left__logo" src="img/main-logo.png" alt="Logo"/>
@@ -34,14 +47,22 @@ function App() {
       </header>
       <section className="slider">
         <div className="slider-bg" ></div>
-        </section>
+      </section>
       <section className="content p-40">
-          <h1 className="mb-40">
+        <div className="d-flex align-center justify-between mb-40">
+          <h1>
             Католог товарів
           </h1>
-
+          <div className="content__search-block d-flex">
+            <img src="/img/search.svg" alt="Search"/>
+            <input placeholder="Пошук..."/>
+          </div>
+        </div>
           <div className="products d-flex m-w1400">
           <div className="card">
+            <div className="card-favorite">
+              <img src="/img/unliked.svg" alt="unliked" />
+            </div>
                 <img width={250} height={250} src="/products/la-roshe.jpg" alt="product" className="mb-15"></img>
                   <div className="product-name mb-20">La roche posay Effaclar Gel Exfoliante Puro 400ml</div>
                   <div className="d-flex justify-between align-center">
