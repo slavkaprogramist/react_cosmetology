@@ -8,6 +8,10 @@ body {
 *{
   font-family: "Inter",-apple-system;
 }
+
+.d-none{
+  display: none;
+}
 .wrapper{
   background: #ffff;
   box-shadow: 0px 10px 20px rga(30, 0, 0, 0.04);
@@ -96,7 +100,7 @@ section{
 }
 }
 .overlay{
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   background-color: rgba(0, 0, 0, 0.1);
@@ -105,24 +109,98 @@ section{
   height: 100%;
 }
 .drawer{
+  display: flex;
+  flex-direction: column;
   position: absolute;
-  width: 385px;
+  width: 420px;
   right: 0;
   height: 100%;
   background: #FFFFFF;
   box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
   padding: 30px;
+  &__items{
+    flex: 1;
+    overflow: auto;
+  }
   h2{
+    display: flex;
+    justify-content: space-between;
     font-size: 24px;
     margin: 0;
+    margin-right: 30px;
   }
-}
-.cardItem{
-  p{
-    font-size: 16px;
+  &__remove-btn{
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.15s ease-in-out;
+    &:hover{
+      opacity: 1;
+    }
   }
-  b{
-    font-size: 14px;
+  &__total{
+    margin-top:20px ;
+    li{
+      display: flex;
+      align-items: flex-end;
+    div{
+      flex: 1;
+      height: 1px;
+      border-bottom: 1px dashed #dfdfdf;
+      position: relative;
+      top:-4px;
+      margin: 0 7px;
+    }
+  }
+    .greenButton{
+      position: relative;
+          &:hover{
+            img{
+            transform: translateX(5px) ;
+          }
+        }
+      img{
+        position: absolute;
+        right: 30px;
+        top: 20px;
+        transition: transform 0.2s ease-in-out;
+      }
+    }
   }
 
+}
+.cardItem{
+  display: flex;
+  align-items: center;
+  border: 1px solid #f3f3f3;
+  border-radius:20px;
+  overflow: hidden;
+  padding-right: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  p{
+    font-size: 15px;
+  }
+  b{
+    font-size: 15px;
+  }
+
+}
+
+.greenButton{
+  width: 100%;
+  background: #9DD558;
+  border-radius: 18px;
+  height: 55px;
+  border:0;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+  &:hover{
+    background: lighten($color: #9DD558, $amount: 10%) ;
+  }
+  &:active{
+    background: darken($color: #9DD558, $amount: 15%)
+  }
 }
