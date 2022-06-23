@@ -10,7 +10,7 @@ function Drawer({onRemove,onClose,items = []}){
                 <div className="drawer__items">
                 {
                   items.map((obj) =>(
-                    <div className="cardItem">
+                    <div key = {obj.id} className="cardItem">
                       <img className="mr-20" width={70} height={70} src={obj.imgageUrl} alt="product"/>
                         <div className="mr-20">
                           <p className="mb-5">{obj.title}</p>

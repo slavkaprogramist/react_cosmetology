@@ -4,6 +4,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgba(246, 209, 250, 0.933);
+
 }
 *{
   font-family: "Inter",-apple-system;
@@ -123,9 +124,11 @@ section{
   background: #FFFFFF;
   box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
   padding: 30px;
+  overflow: hidden;
   &__items{
     flex: 1;
     overflow: hidden;
+
   }
   h2{
     display: flex;
@@ -138,6 +141,7 @@ section{
     opacity: 0.5;
     cursor: pointer;
     transition: opacity 0.15s ease-in-out;
+    margin-bottom: 5px;
     &:hover{
       opacity: 1;
     }

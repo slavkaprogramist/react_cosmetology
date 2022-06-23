@@ -1,20 +1,25 @@
 
 import Card from "../components/Card"
-function Favorite({items}){
+import React from "react";
+import AppContext from '../context';
+
+function Favorite({ onAddToFavorite}){
+    const {favorites} = React.useContext(AppContext);
+
 
     return(
         <section className="content p-40">
         <div className="d-flex align-center justify-between mb-40">
-            <h1 className=""> Список побажань</h1>
+            <h1> Список побажань</h1>
         </div>
         <div className="products d-flex m-w1400">
-          {items.map((item,index) =>(
+          {favorites.map((item,index) =>(
               <Card
                 key={index}
-                title = {item.title}
-                price = {item.price}
-                imgageUrl={item.imgageUrl}
                 type = {item.type}
+                favorited = {true}
+                onFavorite = {onAddToFavorite}
+                {...item}
             />
             ))}
           </div>
